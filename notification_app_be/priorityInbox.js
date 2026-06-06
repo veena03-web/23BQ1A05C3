@@ -33,9 +33,14 @@ app.get("/top-notifications", async (req, res) => {
 
     try {
 
-        const response = await axios.get(
-            "http://4.224.186.213/evaluation-service/notifications"
-        );
+       const response = await axios.get(
+    "http://4.224.186.213/evaluation-service/notifications",
+    {
+        headers: {
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiJ2ZWVuYXJhamFzcmVlbHVra2FAZ21haWwuY29tIiwiZXhwIjoxNzgwNjQxNjE5LCJpYXQiOjE3ODA2NDA3MTksImlzcyI6IkFmZm9yZCBNZWRpY2FsIFRlY2hub2xvZ2llcyBQcml2YXRlIExpbWl0ZWQiLCJqdGkiOiI0Y2I3OWNjYy05MzNhLTQ0OTQtYThjZi1mMDJhOTRjZGEzOWQiLCJsb2NhbGUiOiJlbi1JTiIsIm5hbWUiOiJsdWtrYSB2ZWVuYSByYWphc3JpIiwic3ViIjoiOWVlNjRmODEtYTUwMi00ZWVjLWEyOWMtMmNlNzYyYThiZDgxIn0sImVtYWlsIjoidmVlbmFyYWphc3JlZWx1a2thQGdtYWlsLmNvbSIsIm5hbWUiOiJsdWtrYSB2ZWVuYSByYWphc3JpIiwicm9sbE5vIjoiMjNicTFhMDVjMyIsImFjY2Vzc0NvZGUiOiJRUWRFWXkiLCJjbGllbnRJRCI6IjllZTY0ZjgxLWE1MDItNGVlYy1hMjljLTJjZTc2MmE4YmQ4MSIsImNsaWVudFNlY3JldCI6Inl1RXBQcHFwZUVBWXBqV0IifQ.2HARpM8Gf_wlpe3hUZqzgkkbpes-t7NZ2yrHR1ssluk"
+        }
+    }
+);
 
         notifications = response.data.notifications || response.data;
 
